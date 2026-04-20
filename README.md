@@ -2,7 +2,7 @@
 
 To DO
 
-Hydra and wandb are used for hyperparameters sweep. Uv is used as package manager.
+Uv is used as package manager.
 
 ## Cookiecutter template
 
