@@ -1,0 +1,7 @@
+[project]
+name = "CDA-case2"
+version = "0.1.0"
+description = "To DO"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
