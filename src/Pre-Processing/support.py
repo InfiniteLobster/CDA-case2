@@ -15,6 +15,7 @@ def BoxplotTable(df,n_cols,name):
     for ax, col in zip(axes, columns_to_plot):
         #creating current boxplot
         df.boxplot(column=col, ax=ax)
+        skew_value = df[col].dropna().skew()#calculating the skewness of the current feature to include it in the boxplot title
         #calculating outlier thresholds
         q1 = df[col].quantile(0.25)
         q3 = df[col].quantile(0.75)
@@ -28,7 +29,7 @@ def BoxplotTable(df,n_cols,name):
         ax.axhline(heavy_lower, color="red", linestyle="--", linewidth=1)
         ax.axhline(heavy_upper, color="red", linestyle="--", linewidth=1)
         #setting boxplot descriptions
-        ax.set_title(col, fontsize=9)
+        ax.set_title(f"{col}\nskew={skew_value:.2f}", fontsize=9)#adding the skewness
         ax.tick_params(axis="x", labelsize=8)
         ax.tick_params(axis="y", labelsize=8)
     #setting the remaining subplots to invisible if there are more subplots than features (as the grid of boxplots was generated from column/row numbers, but not all subplots are needed if the number of features is not a perfect multiple of this number)
