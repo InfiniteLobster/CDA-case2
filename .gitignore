@@ -17,3 +17,6 @@ wheels/
 #ignoring sweep folders
 /wandb/
 /outputs/
+#data files
+*.csv
+*.png
